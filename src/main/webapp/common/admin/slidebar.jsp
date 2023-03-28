@@ -9,7 +9,7 @@
                 <!-- Sidenav Heading (Posts)-->
                 <div class="sidenav-menu-heading">Mục</div>
                 <!-- Sidenav Link (Charts)-->
-                <a class="nav-link" href="<%=request.getContextPath()%>/admin">
+                <a class="nav-link" href="<%=request.getContextPath()%>/admin/">
                     <div class="nav-link-icon"><i data-feather="bookmark"></i></div>
                     DashBoard
                 </a>

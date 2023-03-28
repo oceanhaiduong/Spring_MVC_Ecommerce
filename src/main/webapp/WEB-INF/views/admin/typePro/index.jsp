@@ -33,8 +33,13 @@
 				<div class="card-header d-flex justify-content-between bg-light">
 					<div class="text-black">Extended DataTables</div>
 					<div>
+						<c:if test="${not empty msg}">
+							<p class="p-3 mb-2 bg-success text-white font-weight-bold">${msg}</p>
+						</c:if>
+					</div>
+					<div>
 						<a class="btn btn-success btn-sm font-weight-bold"
-							style="font-size: 14px; font-weight: initial;" href="<%=request.getContextPath()%>/admin/newPro"
+							style="font-size: 14px; font-weight: initial;" href="<%=request.getContextPath()%>/admin/newType"
 							role="button">Tạo loại sản phảm</a>
 					</div>
 				</div>
@@ -69,13 +74,14 @@
 											<td>${category.name_type}</td>
 											<td>					
 												<a class="btn btn-datatable btn-icon btn-warning me-2"
-													href="<%=request.getContextPath()%>/admin/editPro"
+													href="<%=request.getContextPath()%>/admin/editType/${category.id_type}"
 													> <i style="width: 25px; height: 25px; padding: 5px"
 														class="bi bi-box-arrow-in-down-left"></i></a>																							
-												<button class="btn btn-datatable btn-icon btn-danger">
-													<i style="width: 25px; height: 25px; padding: 5px"
-														class="bi bi-trash"></i>
-												</button>
+												<a class="btn btn-datatable btn-icon btn-danger"
+												href="<%=request.getContextPath()%>/admin/deleteType/${category.id_type}"
+												onclick="return confirm('Do you really want to delete?')"><i
+													style="width: 25px; height: 25px; padding: 5px"
+													class="bi bi-trash"></i> </a>
 											</td>
 										</tr>
 									</c:forEach>

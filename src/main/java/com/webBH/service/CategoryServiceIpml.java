@@ -13,8 +13,8 @@ public class CategoryServiceIpml implements CategoryService{
 	private CategoryDao categoryDao;
 	
 	
-	public Category getCategory(int id_type) {
-		return categoryDao.getCategory(id_type);
+	public Category getCategory(int id) {
+		return categoryDao.getCategory(id);
 	}
 
 
@@ -24,20 +24,17 @@ public class CategoryServiceIpml implements CategoryService{
 
 	@Override
 	public int addCategory(Category category) {
-		// TODO Auto-generated method stub
-		return 0;
+		return categoryDao.addCategory(category);
 	}
 
 	@Override
 	public int updateCategory(Category category) {
-		// TODO Auto-generated method stub
-		return 0;
+		return categoryDao.updateCategory(category);
 	}
 
 	@Override
-	public int deleteCategory(int id_type) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteCategory(int id) {
+		return categoryDao.deleteCategory(id);
 	}
 
 }

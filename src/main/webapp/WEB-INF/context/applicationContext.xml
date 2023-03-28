@@ -48,13 +48,13 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 
-	<!-- service -->
-	<bean id="UserDetailService"
-		class="com.webBH.service.UserDetailServiceImpl" />
+	<!-- User service -->
+	<bean id="UserService"
+		class="com.webBH.service.UserServiceImpl" />
 
-	<!-- dao -->
-	<bean id="userDetailDao"
-		class="com.webBH.DAO.UserDetailDaoImpl" />
+	<!-- User dao -->
+	<bean id="userDao"
+		class="com.webBH.DAO.UsersDaoImpl" />
 		
 	<!--Product service -->
 	<bean id="ProductService"

@@ -3,33 +3,13 @@
 
 	<!-- apply web template -->
 	<decorator name="trang-chu" page="web2.jsp">
-		<pattern>/trang-chu</pattern> 
+		<pattern>/trang-chu/*</pattern>
+		<pattern>/trang-chu</pattern>
 	</decorator>
-	
+
 	<!-- Admin -->
 	<decorator name="admin" page="admin.jsp">
-		<pattern>/admin</pattern> 
+		<pattern>/admin/*</pattern>
+		<pattern>/admin</pattern>
 	</decorator>
-	
-	<decorator name="admin" page="admin.jsp">
-		<pattern>/admin/product</pattern> 
-	</decorator>
-	
-	<decorator name="admin" page="admin.jsp">
-		<pattern>/admin/catePro</pattern> 
-	</decorator>
-	
-	<decorator name="admin" page="admin.jsp">
-		<pattern>/admin/newPro</pattern> 
-	</decorator>
-	
-	<decorator name="admin" page="admin.jsp">
-		<pattern>/admin/addPro</pattern> 
-	</decorator>
-	
-	<decorator name="admin" page="admin.jsp">
-		<pattern>/admin/editPro</pattern> 
-	</decorator>
-	<!-- Admin -->
-	
 </decorators>

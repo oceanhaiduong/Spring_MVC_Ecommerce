@@ -15,26 +15,29 @@
 		<intercept-url pattern="/" access="permitAll()" />
 		<intercept-url pattern="/trang-chu" access="permitAll()" />
 		<intercept-url pattern="/login" access="permitAll()" />
-		<intercept-url pattern="/logout" access="permitAll()" /> 
+		<intercept-url pattern="/Signup" access="permitAll()" />
+		<intercept-url pattern="/logout" access="permitAll()" />
 
 
 		<intercept-url pattern="/userInfo"
 			access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/admin"
 			access="hasRole('ROLE_ADMIN')" />
-		<!-- <intercept-url pattern="/other/**" access="isAuthenticated()" /> -->
+		<intercept-url pattern="/admin/*"
+			access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/other/**"
+			access="isAuthenticated()" />
 
 		<access-denied-handler error-page="/403" />
 
 		<form-login login-page='/login'
 			login-processing-url="/j_spring_security_check"
-			default-target-url="/trang-chu" always-use-default-target="false"
+			default-target-url="/trang-chu/" always-use-default-target="false"
 			authentication-failure-url="/login?error=true"
 			username-parameter="username" password-parameter="password" />
 
-		<logout logout-url="/logout"
-			logout-success-url="/logoutSuccessful" delete-cookies="JSESSIONID"
-			invalidate-session="true" />
+		<logout logout-url="/logout" logout-success-url="/trang-chu"
+			delete-cookies="JSESSIONID" invalidate-session="true" />
 
 	</http>
 
@@ -52,8 +55,8 @@
 		<!-- authentication from database -->
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="dataSource"
-				users-by-username-query="select username,password, enabled from users where username=?"
-				authorities-by-username-query="Select username, concat('ROLE_',user_role) user_role from user_roles where username=?" />
+				users-by-username-query="select username,password,enabled from user_s where username=?"
+				authorities-by-username-query="Select username, concat('ROLE_',user_role) user_role from user_s where username=?" />
 		</authentication-provider>
 
 	</authentication-manager>

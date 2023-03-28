@@ -1,7 +1,13 @@
 package com.webBH.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Category {
 	private int id_type;
+	
+	@NotNull(message = "Không được để trống")
+	@Size(min = 3, message = "Tên loại sản phẩm phải từ ba ký tự")
 	private String name_type;
 	
 	public Category() {

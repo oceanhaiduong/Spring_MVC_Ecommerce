@@ -11,7 +11,9 @@
     <!-- * * Tip * * You can use text or an image for your navbar brand.-->
     <!-- * * * * * * When using an image, we recommend the SVG format.-->
     <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-    <a class="navbar-brand pe-3 ps-4 ps-lg-2 text-white" href="/admin">SB Admin Pro</a>
+
+    <a class="navbar-brand pe-3 ps-4 ps-lg-2 text-white" href="<%=request.getContextPath()%>/admin">SB Admin Pro</a>
+
     <!-- Navbar Search Input-->
     <!-- * * Note: * * Visible only on and above the lg breakpoint-->
     <form class="form-inline me-auto d-none d-lg-block me-3">
@@ -221,7 +223,7 @@
                     <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
                     Account
                 </a>
-                <a class="dropdown-item" href="{{ route('logout') }}" >
+                <a class="dropdown-item" href="<%=request.getContextPath()%>/logout" >
                     <div class="dropdown-item-icon"><i data-feather="log-out"></i>
                  Logout              
                 </a>
