@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 21, 2023 at 01:39 AM
+-- Generation Time: Mar 26, 2023 at 01:03 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -44,14 +44,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `content`, `img_path`, `created_at`, `updated_at`, `category_id`, `price_product`, `path`) VALUES
-(17, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'small-Murad-Redness-Therapy-Travel-Set-a.png', NULL, NULL, 2, 9000, NULL),
-(18, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'small-Murad-Redness-Therapy-Travel-Set-a.png', NULL, NULL, 2, 9000, NULL),
-(19, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'small-Murad-Redness-Therapy-Travel-Set-a.png', NULL, NULL, 2, 9000, NULL),
-(20, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'small-Murad-Redness-Therapy-Travel-Set-a.png', NULL, NULL, 2, 9000, NULL),
-(21, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'small-Murad-Redness-Therapy-Travel-Set-a.png', NULL, NULL, 2, 9000, NULL),
-(22, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'small-Murad-Redness-Therapy-Travel-Set-a.png', NULL, NULL, 2, 9000, NULL),
+(19, 'Kem Chống Nắng Dạng Xịt Heliocare Spray SPF 50', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-1.png', NULL, NULL, 2, 91000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
+(20, 'Son dưỡng môi Collagen Murad Rapid Collagen Infusion for Lip', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-3.png', NULL, NULL, 2, 65000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
+(21, 'Son dưỡng môi Addict Lipstick Dior', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-5.png', NULL, NULL, 2, 29000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
+(22, 'Serum giúp giảm nám chống lão hóa da Rapid Age Spot and', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-6.png', NULL, NULL, 2, 11000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
 (23, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'small-Murad-Redness-Therapy-Travel-Set-a.png', NULL, NULL, 2, 9000, NULL),
-(24, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'small-Murad-Redness-Therapy-Travel-Set-a.png', NULL, NULL, 2, 9000, NULL),
+(24, 'hello world', 'dawdwalidhwaoidhwaidhwaid\"', 'small-Murad-Redness-Therapy-Travel-Set-a.png', NULL, NULL, 2, 9000, NULL),
 (25, 'hello world', 'dawdwalidhwaoidhwaidhwaid\"\"\"\"\"\"\"\"\"\"\"', 'product1.jpg', NULL, NULL, 1, 110000, NULL),
 (27, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product4.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
 (28, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product4.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
@@ -59,7 +57,10 @@ INSERT INTO `products` (`id`, `title`, `content`, `img_path`, `created_at`, `upd
 (30, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product4.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
 (31, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product4.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
 (32, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product1.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(33, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product1.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/');
+(33, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product1.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
+(34, 'Tinh chất căng mọng Murad Hydro Dynamic Quenching Essence Pro', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-8.png', NULL, NULL, 3, 6351000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
+(35, 'Tinh chất căng mọng Murad Hydro Dynamic Quenching Essence', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-7.png', NULL, NULL, 1, 2691000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
+(36, 'fsdf', 'sdfsdfsdfsd\"', 'product-4.png', '2023-03-26 10:50:11', '2023-03-26 10:54:35', 1, 20400, 'D:/Java spring/webBH/src/main/webapp/template/img/');
 
 -- --------------------------------------------------------
 
@@ -81,52 +82,35 @@ INSERT INTO `type_product` (`id_type`, `name_type`) VALUES
 (2, 'chăm sóc body'),
 (3, 'uống đẹp da'),
 (4, 'mắtt'),
-(5, 'mặt');
+(5, 'mặt'),
+(6, 'MÅ©i'),
+(7, 'oole'),
+(9, 'nếu nếu nếu');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `user_s`
 --
 
-CREATE TABLE `users` (
-  `USERNAME` varchar(36) NOT NULL,
-  `PASSWORD` varchar(36) NOT NULL,
-  `ENABLED` smallint(6) NOT NULL,
-  `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `ho_ten` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `dien_thoai` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `dia_chi` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
+CREATE TABLE `user_s` (
+  `id` int(11) NOT NULL,
+  `username` varchar(36) NOT NULL,
+  `password` varchar(36) NOT NULL,
+  `user_role` varchar(100) DEFAULT NULL,
+  `enabled` smallint(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `user_s`
 --
 
-INSERT INTO `users` (`USERNAME`, `PASSWORD`, `ENABLED`, `email`, `ho_ten`, `dien_thoai`, `dia_chi`) VALUES
-('dbadmin1', '12345', 1, NULL, NULL, NULL, NULL),
-('dbuser1', '12345', 1, NULL, NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_roles`
---
-
-CREATE TABLE `user_roles` (
-  `ROLE_ID` varchar(50) NOT NULL,
-  `USERNAME` varchar(36) NOT NULL,
-  `USER_ROLE` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_roles`
---
-
-INSERT INTO `user_roles` (`ROLE_ID`, `USERNAME`, `USER_ROLE`) VALUES
-('2', 'dbadmin1', 'ADMIN'),
-('3', 'dbadmin1', 'USER'),
-('1', 'dbuser1', 'USER');
+INSERT INTO `user_s` (`id`, `username`, `password`, `user_role`, `enabled`) VALUES
+(1, 'dbadmin1', '12345', 'ADMIN', 1),
+(2, 'dbuser1', '123456', 'USER', 1),
+(4, 'dbuser2', '12345', NULL, 0),
+(3, 'dbuser3', '12345', NULL, 0),
+(5, 'dbuser4', '12345', 'USER', 1);
 
 --
 -- Indexes for dumped tables
@@ -146,17 +130,11 @@ ALTER TABLE `type_product`
   ADD PRIMARY KEY (`id_type`);
 
 --
--- Indexes for table `users`
+-- Indexes for table `user_s`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`USERNAME`);
-
---
--- Indexes for table `user_roles`
---
-ALTER TABLE `user_roles`
-  ADD PRIMARY KEY (`ROLE_ID`),
-  ADD UNIQUE KEY `USER_ROLE_UK` (`USERNAME`,`USER_ROLE`);
+ALTER TABLE `user_s`
+  ADD PRIMARY KEY (`username`),
+  ADD KEY `id` (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -166,13 +144,19 @@ ALTER TABLE `user_roles`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `type_product`
 --
 ALTER TABLE `type_product`
-  MODIFY `id_type` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_type` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `user_s`
+--
+ALTER TABLE `user_s`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

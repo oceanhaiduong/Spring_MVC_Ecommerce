@@ -27,6 +27,18 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> getAllProductNew() {
 		return productDao.getAllProductNew();
 	}
+	
+	public List<Product> getAllProductByCategoryID(int id){
+		return productDao.getAllProductByCategoryID(id);
+	}
+	
+	public List<Product> getAllProductOfCategoryWithLimit(int id, int start, int end){
+		return productDao.getAllProductOfCategoryWithLimit(id, start, end);
+	}
+	
+	public List<Product> getAllProductWithLimit(int start, int end){
+		return productDao.getAllProductWithLimit(start, end);
+	}
 
 	@Override
 	public int addProduct(Product product) {

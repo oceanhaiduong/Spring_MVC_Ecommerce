@@ -78,7 +78,9 @@
 											<td>${product.id}</td>
 											<td>${product.title}</td>
 											<td>${fn:substring(product.content, 0, 50)}...</td>
-											<td>${product.img_path}</td>
+											<td><img width="120px" height="100px"
+												src="<c:url value='/template/img/${product.img_path}'/>"
+												alt=""></td>
 											<td>${product.price_product}</td>
 											<td><a
 												class="btn btn-datatable btn-icon btn-warning me-2"

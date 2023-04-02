@@ -49,33 +49,38 @@
 	</bean>
 
 	<!-- User service -->
-	<bean id="UserService"
-		class="com.webBH.service.UserServiceImpl" />
+	<bean id="UserService" class="com.webBH.service.UserServiceImpl" />
 
 	<!-- User dao -->
-	<bean id="userDao"
-		class="com.webBH.DAO.UsersDaoImpl" />
-		
+	<bean id="userDao" class="com.webBH.DAO.UsersDaoImpl" />
+
 	<!--Product service -->
 	<bean id="ProductService"
 		class="com.webBH.service.ProductServiceImpl" />
 
 	<!--Product dao -->
-	<bean id="ProductDaoImpl"
-		class="com.webBH.DAO.ProductDaoImpl" />	
-		
+	<bean id="ProductDaoImpl" class="com.webBH.DAO.ProductDaoImpl" />
+
 	<!--Category service -->
 	<bean id="CategoryService"
 		class="com.webBH.service.CategoryServiceIpml" />
 
 	<!--Category dao -->
-	<bean id="CategoryDaoImpl"
-		class="com.webBH.DAO.CategoryDaoImpl" />		
-		
+	<bean id="CategoryDaoImpl" class="com.webBH.DAO.CategoryDaoImpl" />
+
+	<!--Cart service -->
+	<bean id="CartService" class="com.webBH.service.CartServiceImpl" />
+
+	<!--Cart dao -->
+	<bean id="CartDaoImpl" class="com.webBH.DAO.CartDaoImpl" />
+	
+	<!--Paginate service -->
+	<bean id="PaginatesService" class="com.webBH.service.PaginatesServiceImpl" />
+
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		 <!-- setting maximum upload size -->
+		<!-- setting maximum upload size -->
 		<property name="maxUploadSize" value="5000000" />
-	</bean>	
+	</bean>
 
 </beans>

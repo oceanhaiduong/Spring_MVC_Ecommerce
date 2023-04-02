@@ -45,6 +45,27 @@ public class ProductDaoImpl implements ProductDao{
 		return product;
 	}
 	
+	@Override
+	public List<Product> getAllProductByCategoryID(int id) {
+		List<Product> product = (List<Product>) jdbcTemplate.query("SELECT * FROM products INNER JOIN type_product ON products.category_id = type_product.id_type AND category_id = ? ",
+				new Object[] { id}, new ProductRowMapper());
+		return product;
+	}
+	
+	@Override
+	public List<Product> getAllProductOfCategoryWithLimit(int id, int start, int end) {
+		List<Product> product = (List<Product>) jdbcTemplate.query("SELECT * FROM products INNER JOIN type_product ON products.category_id = type_product.id_type AND category_id = ? LIMIT ?, ?",
+				new Object[] { id, start, end }, new ProductRowMapper());
+		return product;
+	}
+	
+	@Override
+	public List<Product> getAllProductWithLimit(int start, int end) {
+		List<Product> product = (List<Product>) jdbcTemplate.query("select * from products LIMIT ?, ?",
+				new Object[] { start, end },new ProductRowMapper());
+		return product;
+	}
+	
 
 	@Override
 	public int addProduct(Product product) {

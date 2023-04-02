@@ -53,6 +53,8 @@
 
     <!-- Template Javascript -->
     <script src="<c:url value='/template/web/js/main.js'/>"></script>
+    
+    <dec:getProperty property="page.script"></dec:getProperty>
 </body>
 
 </html>
