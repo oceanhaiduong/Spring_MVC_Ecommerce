@@ -200,7 +200,7 @@
 					</div>
 					<div class="d-flex justify-content-between">
 						<h6 class="font-weight-medium">Tiền ship</h6>
-						<h6 class="font-weight-medium">10000VND</h6>
+						<h6 class="font-weight-medium">$10</h6>
 					</div>
 				</div>
 				<div class="card-footer border-secondary bg-transparent">
