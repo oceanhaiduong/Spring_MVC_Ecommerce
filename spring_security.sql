@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 26, 2023 at 01:03 PM
+-- Generation Time: Mar 31, 2023 at 03:29 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -35,7 +35,7 @@ CREATE TABLE `products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `category_id` int(11) NOT NULL,
-  `price_product` int(10) DEFAULT NULL,
+  `price_product` int(100) DEFAULT NULL,
   `path` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -44,23 +44,33 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `content`, `img_path`, `created_at`, `updated_at`, `category_id`, `price_product`, `path`) VALUES
-(19, 'Kem Chống Nắng Dạng Xịt Heliocare Spray SPF 50', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-1.png', NULL, NULL, 2, 91000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(20, 'Son dưỡng môi Collagen Murad Rapid Collagen Infusion for Lip', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-3.png', NULL, NULL, 2, 65000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(21, 'Son dưỡng môi Addict Lipstick Dior', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-5.png', NULL, NULL, 2, 29000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(22, 'Serum giúp giảm nám chống lão hóa da Rapid Age Spot and', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-6.png', NULL, NULL, 2, 11000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(23, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'small-Murad-Redness-Therapy-Travel-Set-a.png', NULL, NULL, 2, 9000, NULL),
-(24, 'hello world', 'dawdwalidhwaoidhwaidhwaid\"', 'small-Murad-Redness-Therapy-Travel-Set-a.png', NULL, NULL, 2, 9000, NULL),
-(25, 'hello world', 'dawdwalidhwaoidhwaidhwaid\"\"\"\"\"\"\"\"\"\"\"', 'product1.jpg', NULL, NULL, 1, 110000, NULL),
-(27, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product4.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(28, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product4.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(29, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product3.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(30, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product4.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(31, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product4.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(32, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product1.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(33, 'hello world', 'dawdwalidhwaoidhwaidhwaid', 'product1.jpg', NULL, NULL, 2, 9000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(34, 'Tinh chất căng mọng Murad Hydro Dynamic Quenching Essence Pro', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-8.png', NULL, NULL, 3, 6351000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(35, 'Tinh chất căng mọng Murad Hydro Dynamic Quenching Essence', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-7.png', NULL, NULL, 1, 2691000, 'D:/Java spring/webBH/src/main/webapp/template/img/'),
-(36, 'fsdf', 'sdfsdfsdfsd\"', 'product-4.png', '2023-03-26 10:50:11', '2023-03-26 10:54:35', 1, 20400, 'D:/Java spring/webBH/src/main/webapp/template/img/');
+(37, 'Bộ kit chống lão hóa Murad Age Reform Travel Set', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-4.png', '2023-03-28 10:45:13', '2023-03-28 10:45:13', 1, 1465000, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(38, 'Bộ kit Murad Better Skin Bonus GWP', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-7.png', '2023-03-28 14:34:48', '2023-03-28 14:34:48', 3, 1806000, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(39, 'Nước Hoa Hồng Cho Da Mụn Murad Clarifying Toner', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-8.png', '2023-03-28 14:36:17', '2023-03-28 14:36:17', 4, 752000, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(40, 'Muối trị liệu toàn thân Hydro Active Mineral Salts Dermalogica', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-4.png', '2023-03-28 14:36:54', '2023-03-28 14:36:54', 5, 1085000, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(41, 'Mascara Trang Điểm Dưỡng Mi RevitaLash VOLUMIZING Mascara', '\'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-8.png', '2023-03-28 14:39:12', '2023-03-28 14:39:12', 1, 690000, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(42, 'Kem giúp giảm mụn Neostrata Spot Treatment', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_6.jpg', '2023-03-31 06:15:58', '2023-03-31 06:15:58', 3, 698000, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(43, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 5, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(44, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 2, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(45, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 2, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(46, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 5, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(47, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 1, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(48, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 5, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(49, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 5, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(50, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 2, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(51, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 5, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(52, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 1, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(53, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 5, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(54, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 5, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(55, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 2, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(56, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 5, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(57, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 1, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(58, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 5, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(59, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 1, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(60, 'Vitamin C điều giúp giảm nám đốm nâu Mesoestetic Ampoules of', 'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'cosmetic_9.jpg', '2023-03-31 07:46:36', '2023-03-31 07:46:36', 5, 2457400, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(61, 'Mascara Trang Điểm Dưỡng Mi RevitaLash VOLUMIZING Mascara', '\'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-8.png', '2023-03-28 14:39:12', '2023-03-28 14:39:12', 1, 690000, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(62, 'Mascara Trang Điểm Dưỡng Mi RevitaLash VOLUMIZING Mascara', '\'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-8.png', '2023-03-28 14:39:12', '2023-03-28 14:39:12', 1, 690000, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img'),
+(63, 'Mascara Trang Điểm Dưỡng Mi RevitaLash VOLUMIZING Mascara', '\'Kem giúp giảm nám The Perfect Bleaching Cream - sản phẩm giúp giảm nám chuyên sâu giúp cải thiện da sạm nám, nhiều đốm nâu, gia tăng đàn hồi, làm mịn da hiệu quả.', 'product-8.png', '2023-03-28 14:39:12', '2023-03-28 14:39:12', 1, 690000, 'D:\\Java spring\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\webBH\\template\\img');
 
 -- --------------------------------------------------------
 
@@ -81,11 +91,8 @@ INSERT INTO `type_product` (`id_type`, `name_type`) VALUES
 (1, 'chăm sóc da mặt'),
 (2, 'chăm sóc body'),
 (3, 'uống đẹp da'),
-(4, 'mắtt'),
-(5, 'mặt'),
-(6, 'MÅ©i'),
-(7, 'oole'),
-(9, 'nếu nếu nếu');
+(4, 'mắt'),
+(5, 'mặt');
 
 -- --------------------------------------------------------
 
@@ -144,7 +151,7 @@ ALTER TABLE `user_s`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `type_product`
