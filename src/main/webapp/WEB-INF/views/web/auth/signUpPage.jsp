@@ -35,12 +35,12 @@
 
 					<form:form action="addUser" method='POST' modelAttribute="newUser">
 						<div class="mb-4 mt-4">
-							<span class="text-primary font-weight-bold">Sign Up
-								Account</span>
+							<span class="text-primary font-weight-bold">Đăng Ký Tài Khoản
+								</span>
 						</div>
 						<!-- Email input -->
 						<div class="form-outline mb-4">
-							<label class="form-label" for="form1Example13">Username</label>
+							<label class="form-label" for="form1Example13">Tên Đăng Nhập</label>
 							<form:input type="text" id="form1Example13" path='username'
 								cssClass="form-control form-control-lg" />
 							<form:errors path="username" cssClass="error text-danger" />
@@ -48,7 +48,7 @@
 
 						<!-- Password input -->
 						<div class="form-outline mb-4">
-							<label class="form-label" for="form1Example23">Password</label>
+							<label class="form-label" for="form1Example23">Mật Khẩu</label>
 							<form:input type="password" id="form1Example23" path='password'
 								cssClass="form-control form-control-lg" />
 							<form:errors path="password" cssClass="error text-danger" />
@@ -76,26 +76,26 @@
 							<div class="form-check">
 								<input class="form-check-input" type="checkbox" value=""
 									id="form1Example3" checked /> <label class="form-check-label"
-									for="form1Example3"> Remember me </label>
+									for="form1Example3"> Nhớ Mật Khẩu</label>
 							</div>
-							<a href="#!">Forgot password?</a>
+							<a href="#!">Quên Mật Khẩu</a>
 						</div>
 
 						<!-- Submit button -->
 						<button name="submit" type="submit" value="submit"
-							class="btn btn-primary btn-lg btn-block">Sign Up</button>
+							class="btn btn-primary btn-lg btn-block">Đăng Ký</button>
 
 						<div class="divider d-flex align-items-center my-4">
-							<p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+							<p class="text-center fw-bold mx-3 mb-0 text-muted">Hoặc</p>
 						</div>
 
 						<a class="btn btn-primary btn-lg btn-block"
 							style="background-color: #3b5998" href="#!" role="button"> <i
-							class="fab fa-facebook-f me-2"></i>Continue with Facebook
+							class="fab fa-facebook-f me-2"></i>Kết Nối FaceBook
 						</a>
 						<a class="btn btn-primary btn-lg btn-block"
 							style="background-color: #55acee" href="#!" role="button"> <i
-							class="fab fa-twitter me-2"></i>Continue with Twitter
+							class="fab fa-twitter me-2"></i>Kết Nối Twitter
 						</a>
 
 					</form:form>

@@ -56,10 +56,9 @@
         <div class="row border-top border-light mx-xl-5 py-4">
             <div class="col-md-6 px-xl-0">
                 <p class="mb-md-0 text-center text-md-left text-dark">
-                    &copy; <a class="text-dark font-weight-semi-bold" href="#">Group HDHGD</a>. All Rights Reserved. Designed
-                    by
+                    &copy; <a class="text-dark font-weight-semi-bold" href="#">Group HDHGD</a>. Đã đăng ký bản quyền. Được thiết kế bởi
                     <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a><br>
-                    Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                    Phân phối bởi <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">

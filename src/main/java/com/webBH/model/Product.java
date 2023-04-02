@@ -2,14 +2,35 @@ package com.webBH.model;
 
 import java.sql.Timestamp;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
+
 public class Product {
 	private int id;
+	
+	@NotEmpty(message = "Không được để trống")
 	private String title;
+	
+	@NotEmpty(message = "Không được để trống")
 	private String content;
+	
 	private String path;
 	private String img_path;
+	
+//	@Pattern(regexp = "([^\\s]+(\\.(?i)(jpg|png|gif))$)", message = "Phải là các file jpg,png,gif")
+	@NotNull(message = "Vui lòng chọn file")
+	private MultipartFile myFile;
+	
+	@NotNull(message = "Không được để trống")
 	private Integer price_product;
+	
+	@NotNull(message = "Không được để trống")
 	private Integer category_id;
+	
 	private Timestamp created_at;
 	private Timestamp updated_at;
 	
@@ -17,14 +38,15 @@ public class Product {
 		
 	}
 	
-	public Product(int id, String title, String content, String path, String img_path, Integer price_product,
-			Integer category_id, Timestamp created_at, Timestamp updated_at) {
+	public Product(int id, String title, String content, String path, String img_path, MultipartFile myFile,
+			Integer price_product, Integer category_id, Timestamp created_at, Timestamp updated_at) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.path = path;
 		this.img_path = img_path;
+		this.myFile = myFile;
 		this.price_product = price_product;
 		this.category_id = category_id;
 		this.created_at = created_at;
@@ -102,6 +124,14 @@ public class Product {
 
 	public void setUpdated_at(Timestamp updated_at) {
 		this.updated_at = updated_at;
+	}
+
+	public MultipartFile getMyFile() {
+		return myFile;
+	}
+
+	public void setMyFile(MultipartFile myFile) {
+		this.myFile = myFile;
 	}
 
 	

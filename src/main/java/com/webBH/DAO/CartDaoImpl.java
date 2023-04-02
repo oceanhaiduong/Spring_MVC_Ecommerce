@@ -17,18 +17,28 @@ public class CartDaoImpl implements CartDao {
 
 	@Autowired
 	ProductService productService;
-	
+
 //	ProductDaoImpl productDaoImpl = new ProductDaoImpl();
 
 	@Override
-	public HashMap<Integer, Cart> addCart(int id, HashMap<Integer, Cart> cart) {
+	public HashMap<Integer, Cart> addCart(int id, HashMap<Integer, Cart> cart, int quantity) {
 		Cart itemCart = new Cart();
 		Product product = productService.getProduct(id);
-		if (product != null && cart.containsKey(id)) {
+		if (product != null && cart.containsKey(id) && quantity == 1) {
+			// Đã tồn tài thì thêm số lượng + 1
 			itemCart = cart.get(id);
 			itemCart.setQuanity(itemCart.getQuanity() + 1);
 			itemCart.setTotalPrice(itemCart.getQuanity() * itemCart.getProduct().getPrice_product());
-		}else {
+		} else if ((product != null && cart.containsKey(id) && quantity > 1)) {
+			// Đã tồn tài thì thêm số lượng tùy theo người chọn
+			itemCart = cart.get(id);
+			itemCart.setQuanity(itemCart.getQuanity() + quantity);
+			itemCart.setTotalPrice(itemCart.getQuanity() * itemCart.getProduct().getPrice_product());
+		} else if (quantity > 1) {
+			itemCart.setProduct(product);
+			itemCart.setQuanity(quantity);
+			itemCart.setTotalPrice(product.getPrice_product());
+		} else {
 			itemCart.setProduct(product);
 			itemCart.setQuanity(1);
 			itemCart.setTotalPrice(product.getPrice_product());
@@ -68,20 +78,18 @@ public class CartDaoImpl implements CartDao {
 	public int TotalQuanity(HashMap<Integer, Cart> cart) {
 		int totalQuanity = 0;
 		// Lặp qua mỗi 1 item trong cart
-		for(Map.Entry<Integer, Cart> itemCart : cart.entrySet())
-		{
+		for (Map.Entry<Integer, Cart> itemCart : cart.entrySet()) {
 			// Lấy số lượng của mỗi item
 			totalQuanity += itemCart.getValue().getQuanity();
 		}
 		return totalQuanity;
 	}
-	
+
 	@Override
 	public int TotalPrice(HashMap<Integer, Cart> cart) {
 		int totalPrice = 0;
 		// Lặp qua mỗi 1 item trong cart
-		for(Map.Entry<Integer, Cart> itemCart : cart.entrySet())
-		{
+		for (Map.Entry<Integer, Cart> itemCart : cart.entrySet()) {
 			// Lấy số lượng của mỗi item
 			totalPrice += itemCart.getValue().getTotalPrice();
 		}

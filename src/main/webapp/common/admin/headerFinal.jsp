@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ include file="/common/taglib.jsp"%>
     
 <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-dark"
     id="sidenavAccordion">
@@ -18,7 +18,7 @@
     <!-- * * Note: * * Visible only on and above the lg breakpoint-->
     <form class="form-inline me-auto d-none d-lg-block me-3">
         <div class="input-group input-group-joined input-group-solid">
-            <input class="form-control pe-0" type="search" placeholder="Search" aria-label="Search" />
+            <input class="form-control pe-0" type="search" placeholder="Tìm kiếm" aria-label="Search" />
             <div class="input-group-text"><i data-feather="search"></i></div>
         </div>
     </form>
@@ -28,7 +28,7 @@
         <li class="nav-item dropdown no-caret d-none d-md-block me-3">
             <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="javascript:void(0);" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="fw-500 text-light">Documentation</div>
+                <div class="fw-500 text-light">Tài liệu</div>
                 <i class="fas fa-chevron-right dropdown-arrow text-light"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-end py-0 me-sm-n15 me-lg-0 o-hidden animated--fade-in-up"
@@ -36,8 +36,8 @@
                 <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro" target="_blank">
                     <div class="icon-stack bg-primary-soft text-primary me-4"><i data-feather="book"></i></div>
                     <div>
-                        <div class="small text-gray-500">Documentation</div>
-                        Usage instructions and reference
+                        <div class="small text-gray-500">Thay đổi</div>
+                        thêm, xóa , sửa
                     </div>
                 </a>
                 <div class="dropdown-divider m-0"></div>
@@ -45,19 +45,10 @@
                     target="_blank">
                     <div class="icon-stack bg-primary-soft text-primary me-4"><i data-feather="code"></i></div>
                     <div>
-                        <div class="small text-gray-500">Components</div>
-                        Code snippets and reference
+                        <div class="small text-gray-500">Thành phần</div>
+                        Cập nhật
                     </div>
-                </a>
-                <div class="dropdown-divider m-0"></div>
-                <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro/changelog"
-                    target="_blank">
-                    <div class="icon-stack bg-primary-soft text-primary me-4"><i data-feather="file-text"></i></div>
-                    <div>
-                        <div class="small text-gray-500">Changelog</div>
-                        Updates and changes
-                    </div>
-                </a>
+                </a>                
             </div>
         </li>
         <!-- Navbar Search Dropdown-->
@@ -87,46 +78,26 @@
                 aria-labelledby="navbarDropdownAlerts">
                 <h6 class="dropdown-header dropdown-notifications-header">
                     <i class="me-2" data-feather="bell"></i>
-                    Alerts Center
-                </h6>
-                <!-- Example Alert 1-->
-                <a class="dropdown-item dropdown-notifications-item" href="#!">
-                    <div class="dropdown-notifications-item-icon bg-warning"><i data-feather="activity"></i></div>
-                    <div class="dropdown-notifications-item-content">
-                        <div class="dropdown-notifications-item-content-details">December 29, 2021</div>
-                        <div class="dropdown-notifications-item-content-text">This is an alert message. It's nothing
-                            serious, but it requires your attention.</div>
-                    </div>
-                </a>
-                <!-- Example Alert 2-->
-                <a class="dropdown-item dropdown-notifications-item" href="#!">
-                    <div class="dropdown-notifications-item-icon bg-info"><i data-feather="bar-chart"></i></div>
-                    <div class="dropdown-notifications-item-content">
-                        <div class="dropdown-notifications-item-content-details">December 22, 2021</div>
-                        <div class="dropdown-notifications-item-content-text">A new monthly report is ready. Click here
-                            to view!</div>
-                    </div>
-                </a>
+                    Thông báo
+                </h6>          
                 <!-- Example Alert 3-->
                 <a class="dropdown-item dropdown-notifications-item" href="#!">
                     <div class="dropdown-notifications-item-icon bg-danger"><i class="fas fa-exclamation-triangle"></i>
                     </div>
                     <div class="dropdown-notifications-item-content">
-                        <div class="dropdown-notifications-item-content-details">December 8, 2021</div>
-                        <div class="dropdown-notifications-item-content-text">Critical system failure, systems shutting
-                            down.</div>
+                        <div class="dropdown-notifications-item-content-details">Tháng 8, 2021</div>
+                        <div class="dropdown-notifications-item-content-text">Hệ thống gặp lỗi</div>
                     </div>
                 </a>
                 <!-- Example Alert 4-->
                 <a class="dropdown-item dropdown-notifications-item" href="#!">
                     <div class="dropdown-notifications-item-icon bg-success"><i data-feather="user-plus"></i></div>
                     <div class="dropdown-notifications-item-content">
-                        <div class="dropdown-notifications-item-content-details">December 2, 2021</div>
-                        <div class="dropdown-notifications-item-content-text">New user request. Woody has requested
-                            access to the organization.</div>
+                        <div class="dropdown-notifications-item-content-details">Tháng 2, 2021</div>
+                        <div class="dropdown-notifications-item-content-text">Có đơn hàn mới</div>
                     </div>
                 </a>
-                <a class="dropdown-item dropdown-notifications-footer" href="#!">View All Alerts</a>
+                <a class="dropdown-item dropdown-notifications-footer" href="#!">Xem tất cả</a>
             </div>
         </li>
         <!-- Messages Dropdown-->
@@ -138,66 +109,20 @@
                 aria-labelledby="navbarDropdownMessages">
                 <h6 class="dropdown-header dropdown-notifications-header">
                     <i class="me-2" data-feather="mail"></i>
-                    Message Center
+                    Thư đến
                 </h6>
                 <!-- Example Message 1  -->
                 <a class="dropdown-item dropdown-notifications-item" href="#!">
                     <img class="dropdown-notifications-item-img"
                         src="<c:url value='/template/admin/img/profile-5.png'/>" />
                     <div class="dropdown-notifications-item-content">
-                        <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt mollit anim id est laborum.</div>
-                        <div class="dropdown-notifications-item-content-details">Thomas Wilcox · 58m</div>
+                        <div class="dropdown-notifications-item-content-text">Hoàn tất thanh toán các đơn hàng</div>
+                        <div class="dropdown-notifications-item-content-details">Quoc Dung · 58 phút trước</div>
                     </div>
                 </a>
-                <!-- Example Message 2-->
-                <a class="dropdown-item dropdown-notifications-item" href="#!">
-                    <img class="dropdown-notifications-item-img"
-                        src="<c:url value='/template/admin/img/profile-5.png'/>"  />
-                    <div class="dropdown-notifications-item-content">
-                        <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt mollit anim id est laborum.</div>
-                        <div class="dropdown-notifications-item-content-details">Emily Fowler · 2d</div>
-                    </div>
-                </a>
-                <!-- Example Message 3-->
-                <a class="dropdown-item dropdown-notifications-item" href="#!">
-                    <img class="dropdown-notifications-item-img"
-                        src="<c:url value='/template/admin/img/profile-5.png'/>"  />
-                    <div class="dropdown-notifications-item-content">
-                        <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt mollit anim id est laborum.</div>
-                        <div class="dropdown-notifications-item-content-details">Marshall Rosencrantz · 3d</div>
-                    </div>
-                </a>
-                <!-- Example Message 4-->
-                <a class="dropdown-item dropdown-notifications-item" href="#!">
-                    <img class="dropdown-notifications-item-img"
-                        src="<c:url value='/template/admin/img/profile-5.png'/>"  />
-                    <div class="dropdown-notifications-item-content">
-                        <div class="dropdown-notifications-item-content-text">Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt mollit anim id est laborum.</div>
-                        <div class="dropdown-notifications-item-content-details">Colby Newton · 3d</div>
-                    </div>
-                </a>
+           
                 <!-- Footer Link-->
-                <a class="dropdown-item dropdown-notifications-footer" href="#!">Read All Messages</a>
+                <a class="dropdown-item dropdown-notifications-footer" href="#!">Xem tất cả</a>
             </div>
         </li>
         <!-- User Dropdown-->
@@ -212,20 +137,18 @@
                     <img class="dropdown-user-img"
                         src="<c:url value='/template/admin/img/profile-5.png'/>"  />
                     <div class="dropdown-user-details">
-                        <div class="dropdown-user-details-name">Valerie Luna</div>
+                    	<c:if test="${User_name != ''}">
+                        <div class="dropdown-user-details-name">${User_name}</div>
                         <div class="dropdown-user-details-email"><a href="/cdn-cgi/l/email-protection"
                                 class="__cf_email__"
                                 data-cfemail="1d6b7168737c5d7c7271337e7270">[email&#160;protected]</a></div>
+						</c:if>
                     </div>
                 </h6>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/admin/profile">
-                    <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
-                    Account
-                </a>
                 <a class="dropdown-item" href="<%=request.getContextPath()%>/logout" >
                     <div class="dropdown-item-icon"><i data-feather="log-out"></i>
-                 Logout              
+                 Đăng xuất           
                 </a>
             </div>
         </li>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Tạo sản phẩm</title>
 </head>
 <body>
 	<main>
@@ -46,29 +46,33 @@
 					<div class="card mb-4">
 						<div class="card-header"></div>
 						<div class="card-body">
-							<form action="<%=request.getContextPath()%>/admin/addPro"
+							<form:form servletRelativeAction="/admin/addPro" modelAttribute="products" 
 								method="POST" enctype="multipart/form-data">
 								<!-- Form Row-->
 								<div class="row gx-3 mb-3">
 									<!-- Form Group (first name)-->
 									<div class="col-md-6">
 										<label class="small mb-1" for="inputUsername">Tiêu đề</label>
-										<input name="title" value="${title}" Class="form-control"
+										<form:input path="title" value="${title}" Class="form-control"
 											type="text" placeholder="Vui lòng nhập tiêu đề" />
+										<form:errors path="title" cssClass="error text-danger" />
 									</div>
 									<!-- Form Group (last name)-->
 									<div class="col-md-6">
-										<label for="files">Chọn file</label> <input name="myFile"
-											value="${myFile}" class="form-control"
-											style="margin-top: 5px;" id="files" type="file" />
+										<label for="files">Chọn file</label>
+										<form:input path="myFile" value="${myFile}"
+											class="form-control" style="margin-top: 5px;" id="files"
+											type="file" />
+										<form:errors path="myFile" cssClass="error text-danger" />
 									</div>
 								</div>
 								<!-- Form Group (username)-->
 								<div class="mb-3">
 									<label for="exampleFormControlTextarea1">Nội dung</label>
-									<textarea name="content" value="${content}"
+									<form:textarea path="content" value="${content}"
 										class="form-control form-control-solid"
-										id="exampleFormControlTextarea1" rows="6"></textarea>
+										id="exampleFormControlTextarea1" rows="6"></form:textarea>
+									<form:errors path="content" cssClass="error text-danger" />
 								</div>
 
 								<!-- Form Row        -->
@@ -76,33 +80,27 @@
 									<!-- Form Group (organization name)-->
 									<div class="col-md-6">
 										<label class="small mb-1" for="inputOrgName">Giá sản
-											phẩm</label> <input name="price_product" class="form-control"
+											phẩm</label>
+										<form:input path="price_product" class="form-control"
 											id="inputOrgName" type="text" value="${price_product}"
 											placeholder="Enter your organization name" />
+										<form:errors path="price_product" cssClass="error text-danger" />
 									</div>
 									<!-- Form Group (location)-->
 									<div class="col-md-6">
 										<label for="exampleFormControlSelect1">Chọn loại sản
 											phẩm</label>
-										<c:choose>
-											<c:when test="${categories != null}">
-												<select name="category_id" style="margin-top: 5px;"
-													class="form-control" id="exampleFormControlSelect1">
-													<option value="" selected="selected">Nhấn vào để
-														chọn một loại</option>
-													<c:forEach var="category" items="${categories}">	
-														<option value="${category.id_type}">${category.name_type}</option>												
-													</c:forEach>
-												</select>
-											</c:when>
-											<c:otherwise>
-        										No Categories found in the DB!
-        									</c:otherwise>
-										</c:choose>
+										<form:select path="category_id" cssClass="form-control" style="margin-top: 5px;">
+											<c:forEach items="${categories}" var="category"
+												varStatus="status">
+												<form:option value="${category.id_type}">${category.name_type}</form:option>
+											</c:forEach>
+										</form:select>
+										<form:errors path="category_id" cssClass="error text-danger" />
 									</div>
 								</div>
 								<button class="btn btn-success" type="submit">Tạo</button>
-							</form>
+							</form:form>
 						</div>
 					</div>
 				</div>

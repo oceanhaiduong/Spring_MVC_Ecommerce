@@ -33,14 +33,14 @@
 				</div>
 				<div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
 					<div class="mb-4 mt-4">
-						<span class="text-primary font-weight-bold">login</span>
+						<span class="text-primary font-weight-bold">Trang Đăng Nhập</span>
 					</div>
 					<!-- /login?error=true -->
 					<c:if test="${param.error == 'true'}">
 						<div style="color: red; margin: 10px 0px;">
 
-							Login Failed!!!<br /> Reason :
-							${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+							Đăng Nhập Thất Bại!!!<br /> 
+							Lý Do: Không Được Để Trống Hoặc Tài Khoản, Mật Khẩu Sai !!!!
 
 						</div>
 					</c:if>
@@ -49,14 +49,14 @@
 						method='POST'>
 						<!-- Email input -->
 						<div class="form-outline mb-4">
-							<label class="form-label" for="form1Example13">Username</label> <input
+							<label class="form-label" for="form1Example13">Tên Đăng Nhập </label> <input
 								type="text" id="form1Example13" name='username'
 								class="form-control form-control-lg" />
 						</div>
 
 						<!-- Password input -->
 						<div class="form-outline mb-4">
-							<label class="form-label" for="form1Example23">Password</label> <input
+							<label class="form-label" for="form1Example23">Mật Khẩu </label> <input
 								type="password" id="form1Example23" name='password'
 								class="form-control form-control-lg" />
 						</div>
@@ -66,25 +66,25 @@
 							<div class="form-check">
 								<input class="form-check-input" type="checkbox" value=""
 									id="form1Example3" checked /> <label class="form-check-label"
-									for="form1Example3"> Remember me </label>
+									for="form1Example3"> Nhớ Mật Khẩu </label>
 							</div>
-							<a href="#!">Forgot password?</a>
+							<a href="#!">Quên Mật Khẩu</a>
 						</div>
 
 						<!-- Submit button -->
 						<button name="submit" type="submit" value="submit"
-							class="btn btn-primary btn-lg btn-block">Sign in</button>
+							class="btn btn-primary btn-lg btn-block">Đăng Nhập</button>
 
 						<div class="divider d-flex align-items-center my-4">
-							<p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+							<p class="text-center fw-bold mx-3 mb-0 text-muted">Hoặc</p>
 						</div>
 
 						<a class="btn btn-primary btn-lg btn-block"
 							style="background-color: #3b5998" href="#!" role="button"> <i
-							class="fab fa-facebook-f me-2"></i>Continue with Facebook
+							class="fab fa-facebook-f me-2"></i>Kết Nối Facebook
 						</a> <a class="btn btn-primary btn-lg btn-block"
 							style="background-color: #55acee" href="#!" role="button"> <i
-							class="fab fa-twitter me-2"></i>Continue with Twitter
+							class="fab fa-twitter me-2"></i>Kết Nối Twitter
 						</a>
 
 					</form>

@@ -9,9 +9,12 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserDao userDao;
 	
-	public Users getUsers(int id) {
+	public Users getUser(int id) {
 		return userDao.getUser(id);
 	}	
+	public Users getUserWithUsername(String username) {
+		return userDao.getUserWithUsername(username);
+	}
 	public List<Users> getAllUsers() {
 		return userDao.getAllUser();
 	}
@@ -29,6 +32,11 @@ public class UserServiceImpl implements UserService{
 	}
 	public UserDao getUserDao() {
 		return userDao;
+	}
+	
+	@Override
+	public int SigUp(Users user) {
+		return userDao.SigUp(user);
 	}
 
 }

@@ -5,104 +5,7 @@
 
 
 
-<!-- Navbar Start -->
-<div class="container-fluid mb-5">
-	<div class="row border-top px-xl-5">
-		<div class="col-lg-3 d-none d-lg-block">
-			<a
-				class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100"
-				data-toggle="collapse" href="#navbar-vertical"
-				style="height: 65px; margin-top: -1px; padding: 0 30px;">
-				<h6 class="m-0">Loại sản phẩm</h6> <i
-				class="fa fa-angle-down text-dark"></i>
-			</a>
-			<nav
-				class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
-				id="navbar-vertical">
-				<div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link" data-toggle="dropdown">Danh mục
-							Loại SP <i class="fa fa-angle-down float-right mt-1"></i>
-						</a>
-						<div
-							class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-							<a href="" class="dropdown-item">Men's Dresses</a> <a href=""
-								class="dropdown-item">Women's Dresses</a> <a href=""
-								class="dropdown-item">Baby's Dresses</a>
-						</div>
-					</div>
-					<c:choose>
-						<c:when test="${Categories != null}">
-							<c:forEach var="category" items="${Categories}">
-								<a href="<%=request.getContextPath()%>/trang-chu/pro-duct/${category.id_type}" class="nav-item nav-link">${category.name_type}</a>
-								<!-- 	<a href="" class="nav-item nav-link">Jeans</a>
-								<a href="" class="nav-item nav-link">Swimwear</a>
-								<a href="" class="nav-item nav-link">Sleepwear</a>
-								<a href="" class="nav-item nav-link">Sportswear</a>
-								<a href="" class="nav-item nav-link">Jumpsuits</a>
-								<a href="" class="nav-item nav-link">Blazers</a>
-								<a href="" class="nav-item nav-link">Jackets</a>
-								<a href="" class="nav-item nav-link">Shoes</a> -->
-							</c:forEach>
-						</c:when>
-						<c:otherwise>
-							<a href="" class="nav-item nav-link text-primary">No
-								Categories found in the DB!</a>
-						</c:otherwise>
-					</c:choose>
-				</div>
-			</nav>
-		</div>
-		<div class="col-lg-9">
-			<nav
-				class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-				<a href="" class="text-decoration-none d-block d-lg-none">
-					<h1 class="m-0 display-5 font-weight-semi-bold">
-						<span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper
-					</h1>
-				</a>
-				<button type="button" class="navbar-toggler" data-toggle="collapse"
-					data-target="#navbarCollapse">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse justify-content-between"
-					id="navbarCollapse">
-					<div class="navbar-nav mr-auto py-0">
-						<a href="index.html" class="nav-item nav-link active">Trang
-							chủ</a> <a href="<%=request.getContextPath()%>/trang-chu/shop"
-							class="nav-item nav-link">Cửa hàng</a>
-						<div class="nav-item dropdown">
-							<a href="#" class="nav-link dropdown-toggle"
-								data-toggle="dropdown">Mục</a>
-							<div class="dropdown-menu rounded-0 m-0">
-								<a href="cart.html" class="dropdown-item">Giỏ hàng</a> <a
-									href="checkout.html" class="dropdown-item">Kiểm tra giỏ
-									hàng</a>
-							</div>
-						</div>
-						<a href="contact.html" class="nav-item nav-link">Liên hệ</a>
-					</div>
-					<div class="navbar-nav ml-auto py-0">
-						<%-- <c:if test="${pageContext.request.remoteUser != null}">
-							<span class="nav-item nav-link">Welcome :
-								${pageContext.request.userPrincipal.name}</span>
-							<a class="nav-item nav-link btn btn-danger"
-								style="width: 80px; height: 30px; padding: 0 0 0 0; line-height: 32px; margin-top: 16px;"
-								href="<%=request.getContextPath()%>/logout">Logout</a>
-						</c:if> --%>
-						<c:if test="${User_name == ''}">
-							<a href="<%=request.getContextPath()%>/login"
-								class="nav-item nav-link">Đăng nhập</a>
-							<a href="<%=request.getContextPath()%>/SignUp"
-								class="nav-item nav-link">Đăng xuất</a>
-						</c:if>
-					</div>
-				</div>
-			</nav>
-		</div>
-	</div>
-</div>
-<!-- Navbar End -->
+
 
 <!-- Shop Detail Start -->
 <div class="container-fluid py-5">
@@ -147,87 +50,20 @@
 			<h3 class="font-weight-semi-bold mb-4">${productDetail.price_product}
 				VND</h3>
 			<p class="mb-4"></p>
-			<div class="d-flex mb-3">
-				<p class="text-dark font-weight-medium mb-0 mr-3">Sizes:</p>
-				<form>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="size-1"
-							name="size"> <label class="custom-control-label"
-							for="size-1">XS</label>
+			<form
+				action="<%=request.getContextPath()%>/trang-chu/cart/${productDetail.id}"
+				method="get">
+				<div class="d-flex align-items-center mb-4 pt-2">
+					<div class="input-group quantity mr-3" style="width: 130px;">
+						<input type="number" min="1" name="quantity" value="1"
+							class="form-control bg-secondary text-center">
 					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="size-2"
-							name="size"> <label class="custom-control-label"
-							for="size-2">S</label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="size-3"
-							name="size"> <label class="custom-control-label"
-							for="size-3">M</label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="size-4"
-							name="size"> <label class="custom-control-label"
-							for="size-4">L</label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="size-5"
-							name="size"> <label class="custom-control-label"
-							for="size-5">XL</label>
-					</div>
-				</form>
-			</div>
-			<div class="d-flex mb-4">
-				<p class="text-dark font-weight-medium mb-0 mr-3">Colors:</p>
-				<form>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="color-1"
-							name="color"> <label class="custom-control-label"
-							for="color-1">Black</label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="color-2"
-							name="color"> <label class="custom-control-label"
-							for="color-2">White</label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="color-3"
-							name="color"> <label class="custom-control-label"
-							for="color-3">Red</label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="color-4"
-							name="color"> <label class="custom-control-label"
-							for="color-4">Blue</label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" class="custom-control-input" id="color-5"
-							name="color"> <label class="custom-control-label"
-							for="color-5">Green</label>
-					</div>
-				</form>
-			</div>
-			<div class="d-flex align-items-center mb-4 pt-2">
-				<div class="input-group quantity mr-3" style="width: 130px;">
-					<div class="input-group-btn">
-						<button class="btn btn-primary btn-minus">
-							<i class="fa fa-minus"></i>
-						</button>
-					</div>
-					<input type="text" class="form-control bg-secondary text-center"
-						value="1">
-					<div class="input-group-btn">
-						<button class="btn btn-primary btn-plus">
-							<i class="fa fa-plus"></i>
-						</button>
-					</div>
-				</div>
-				<form action="<%=request.getContextPath()%>/trang-chu/cart/${productDetail.id}" method="get">
+
 					<button class="btn btn-primary px-3">
 						<i class="fa fa-shopping-cart mr-1"></i> Thêm vào giỏ hàng
 					</button>
-				</form>
-			</div>
+				</div>
+			</form>
 			<div class="d-flex pt-2">
 				<p class="text-dark font-weight-medium mb-0 mr-2">Chia sẻ:</p>
 				<div class="d-inline-flex">
@@ -265,25 +101,23 @@
 									alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
 								<div class="media-body">
 									<h6>
-										John Doe<small> - <i>01 Jan 2045</i></small>
+										Quoc Dung<small> - <i>Tháng 1 - 01 - 2045</i></small>
 									</h6>
 									<div class="text-primary mb-2">
 										<i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
 											class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i>
 										<i class="far fa-star"></i>
 									</div>
-									<p>Diam amet duo labore stet elitr ea clita ipsum, tempor
-										labore accusam ipsum et no at. Kasd diam tempor rebum magna
-										dolores sed sed eirmod ipsum.</p>
+									<p>Sản phẩm tốt, lần sau tôi sẽ mua nó</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6">
-							<h4 class="mb-4">Leave a review</h4>
-							<small>Your email address will not be published. Required
-								fields are marked *</small>
+							<h4 class="mb-4">Để lại đánh giá</h4>
+							<small>Địa chỉ email sẽ không công khai. Các trường bắt
+								buộc nhập *</small>
 							<div class="d-flex my-3">
-								<p class="mb-0 mr-2">Your Rating * :</p>
+								<p class="mb-0 mr-2">Xếp loại * :</p>
 								<div class="text-primary">
 									<i class="far fa-star"></i> <i class="far fa-star"></i> <i
 										class="far fa-star"></i> <i class="far fa-star"></i> <i
@@ -292,15 +126,15 @@
 							</div>
 							<form>
 								<div class="form-group">
-									<label for="message">Your Review *</label>
+									<label for="message">Đánh giá *</label>
 									<textarea id="message" cols="30" rows="5" class="form-control"></textarea>
 								</div>
 								<div class="form-group">
-									<label for="name">Your Name *</label> <input type="text"
+									<label for="name">Tên *</label> <input type="text"
 										class="form-control" id="name">
 								</div>
 								<div class="form-group">
-									<label for="email">Your Email *</label> <input type="email"
+									<label for="email">Email *</label> <input type="email"
 										class="form-control" id="email">
 								</div>
 								<div class="form-group mb-0">

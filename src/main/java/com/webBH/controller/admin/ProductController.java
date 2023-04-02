@@ -3,45 +3,42 @@ package com.webBH.controller.admin;
 import java.io.File;
 import java.sql.Timestamp;
 import java.util.Date;
-
-import javax.servlet.ServletContext;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.HashMap;
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
+import org.springframework.web.servlet.ModelAndView;
 import com.webBH.model.Product;
-import com.webBH.service.CategoryService;
-import com.webBH.service.ProductService;
+
 
 @Controller
-public class ProductController {
-	
-	@Autowired
-	private ProductService productService;
-	
-	@Autowired
-	private CategoryService categoryService;
-	
-	@Autowired
-	ServletContext context;
-	
+public class ProductController extends BaseControllerAdmin {
+
 	@RequestMapping(value = "/admin/product", method = RequestMethod.GET)
-	public String getProducts(ModelMap productModel) {
-		productModel.addAttribute("products", productService.getAllProduct());
-		return "admin/product/index";
+	public ModelAndView getProducts() {
+		map = new HashMap<>();
+		map.put("products", productService.getAllProduct());
+		map.put("User_name", getUserName());
+		_mvShare = new ModelAndView("admin/product/index", map);
+		return _mvShare;
 	}
 
 	@RequestMapping(value = "/admin/newPro", method = RequestMethod.GET)
-	public String AddProductPage(ModelMap categoryModel) {
-		categoryModel.addAttribute("categories", categoryService.getAllCategory());
-		return "admin/product/add";
+	public ModelAndView AddTypePage() {
+		map = new HashMap<>();
+		product = new Product();
+		map.put("products", product);
+		map.put("categories", categoryService.getAllCategory());
+		map.put("User_name", getUserName());
+		_mvShare = new ModelAndView("admin/product/add", map);
+		return _mvShare;
 	}
 
 	@RequestMapping(value = "/admin/addPro", method = RequestMethod.POST)
@@ -49,48 +46,65 @@ public class ProductController {
 			@RequestParam(value = "myFile", required = true) MultipartFile myFile,
 			@RequestParam(value = "content", required = true) String content,
 			@RequestParam(value = "price_product", required = true) Integer price_product,
-			@RequestParam(value = "category_id", required = true) Integer category_id, ModelMap productModel,
-			Product product, RedirectAttributes redirectAttributes) {
-		
-		String filePath = context.getRealPath("template/img");
+			@RequestParam(value = "category_id", required = true) Integer category_id,
+			@ModelAttribute("products") @Valid Product product, BindingResult bindingResult,
+			ModelMap modelMap) {
+
+		// root path
+//		String filePath = context.getRealPath("template/img");
+		// disk path
+		modelMap.addAttribute("categories", categoryService.getAllCategory()); // fix route
+		modelMap.addAttribute("User_name", getUserName()); // fix route
+		String filePath2 = "D:/Java spring/webBH/src/main/webapp/template/img";
 		String fileName;
-	    Date date = new Date();  
-        Timestamp ts=new Timestamp(date.getTime());  
-        
-		try {
-			fileName = myFile.getOriginalFilename();
-			File file = new File(filePath + '/' + fileName);
-			myFile.transferTo(file);
-			product = new Product();
-			product.setTitle(title);
-			product.setImg_path(fileName);
-			product.setContent(content);
-			product.setCreated_at(ts);
-			product.setUpdated_at(ts);
-			product.setPrice_product(price_product);
-			product.setCategory_id(category_id);
-			product.setPath(filePath);
-			int resp = productService.addProduct(product);
-			
-			if (resp > 0) {
-				productModel.addAttribute("msg", "Product Add successfull !");
-				return "admin/product/success/AddSuccess";
-			} else {
-				productModel.addAttribute("msg", "Product addition failed !");
-				return "admin/product/success/AddSuccess";
+		Date date = new Date();
+		Timestamp ts = new Timestamp(date.getTime());
+
+		if (bindingResult.hasErrors()) {
+			System.out.println("vo nay");
+//			return "redirect:/admin/newPro";
+			return "admin/product/add";
+		} else {
+			try {
+				fileName = myFile.getOriginalFilename();
+//					File file = new File(filePath + '/' + fileName);
+				File file2 = new File(filePath2 + '/' + fileName);
+//					myFile.transferTo(file);
+				myFile.transferTo(file2);
+				product = new Product();
+				product.setTitle(title);
+				product.setImg_path(fileName);
+				product.setContent(content);
+				product.setCreated_at(ts);
+				product.setUpdated_at(ts);
+				product.setPrice_product(price_product);
+				product.setCategory_id(category_id);
+				product.setPath(filePath2);
+				int resp = productService.addProduct(product);
+
+				if (resp > 0) {
+					modelMap.addAttribute("msg", "Thêm sản phẩm thành công !");
+					return "admin/product/success/AddSuccess";
+				} else {
+					modelMap.addAttribute("msg", "Thêm sản phẩm thất bại !");
+					return "admin/product/success/AddSuccess";
+				}
+			} catch (Exception e) {
+				return "admin/product/add";
 			}
-		} catch (Exception e) {
-			return "redirect:/admin/newPro";
 		}
 
 	}
 
 	@RequestMapping(value = "/admin/editPro/{id}", method = RequestMethod.GET)
-	public String EditProductPage(@PathVariable("id") int id, ModelMap productModel) {
-		productModel.addAttribute("id", id);
-		productModel.addAttribute("productDetail", productService.getProduct(id));
-		productModel.addAttribute("categories", categoryService.getAllCategory());
-		return "admin/product/edit";
+	public ModelAndView EditProductPage(@PathVariable("id") int id, ModelMap productModel) {
+		map = new HashMap<>();
+		map.put("id", id);
+		map.put("productDetail", productService.getProduct(id));
+		map.put("categories", categoryService.getAllCategory());
+		map.put("User_name", getUserName());
+		_mvShare = new ModelAndView("admin/product/edit", map);
+		return _mvShare;
 	}
 
 	@RequestMapping(value = "/admin/editPro", method = RequestMethod.POST)
@@ -98,13 +112,15 @@ public class ProductController {
 			@RequestParam(value = "content", required = true) String content,
 			@RequestParam(value = "myFile", required = true) MultipartFile myFile,
 			@RequestParam(value = "price_product", required = true) Integer price_product,
-			@RequestParam(value = "category_id", required = true) Integer category_id, ModelMap productModel) {
+			@RequestParam(value = "category_id", required = true) Integer category_id, 
+			ModelMap modelMap) {
 
-		Product product = new Product();
+		modelMap.addAttribute("User_name", getUserName()); // fix route
+		product = new Product();
 		String filePath = "D:/Java spring/webBH/src/main/webapp/template/img/";
 		String fileName;
-		Date date = new Date();  
-        Timestamp ts=new Timestamp(date.getTime());  
+		Date date = new Date();
+		Timestamp ts = new Timestamp(date.getTime());
 
 		if (myFile != null) {
 			try {
@@ -120,10 +136,10 @@ public class ProductController {
 				product.setUpdated_at(ts);
 				int resp = productService.updateProduct(product);
 				if (resp > 0) {
-					productModel.addAttribute("msg", "Product Edit with successfull !");
+					modelMap.addAttribute("msg", "Sửa sản phẩm thành công !");
 					return "admin/product/success/AddSuccess";
 				} else {
-					productModel.addAttribute("msg", "Product addition with failed !");
+					modelMap.addAttribute("msg", "Sửa sản phẩm thất bại !");
 					return "admin/product/success/AddSuccess";
 				}
 			} catch (Exception e) {
@@ -137,10 +153,10 @@ public class ProductController {
 //				product.setImg_path(fileName);
 				int resp = productService.updateProductWithOutImg(product);
 				if (resp > 0) {
-					productModel.addAttribute("msg", "Product Edit with successfull !");
+					modelMap.addAttribute("msg", "Sửa sản phẩm thành công !");
 					return "admin/product/success/AddSuccess";
 				} else {
-					productModel.addAttribute("msg", "Product addition with failed !");
+					modelMap.addAttribute("msg", "Sửa sản phẩm thất bại !");
 					return "admin/product/success/AddSuccess";
 				}
 			}
@@ -149,17 +165,18 @@ public class ProductController {
 			return "admin/product/edit";
 		}
 	}
-	
+
 	@RequestMapping(value = "/admin/delete/{id}", method = RequestMethod.GET)
-	public String deleteProduct(@PathVariable("id") int id, ModelMap userModel, RedirectAttributes redirectAttributes) {
+	public String deleteProduct(@PathVariable("id") int id, ModelMap modelMap) {
 		int resp = productService.deleteProduct(id);
-		userModel.addAttribute("products", productService.getAllProduct());
+		modelMap.addAttribute("products", productService.getAllProduct());
+		modelMap.addAttribute("User_name", getUserName()); // fix route
 		if (resp > 0) {
-			userModel.addAttribute("msg", "User with id : " + id + " deleted successfully.");
+			modelMap.addAttribute("msg", "Sản phẩm với id : " + id + " xóa thành công.");
 		} else {
-			userModel.addAttribute("msg", "User with id : " + id + " deletion failed.");
+			modelMap.addAttribute("msg", "Sản phẩm với id : " + id + " sửa thành công.");
 		}
 		return "redirect:/admin/product";
 	}
-	
+
 }

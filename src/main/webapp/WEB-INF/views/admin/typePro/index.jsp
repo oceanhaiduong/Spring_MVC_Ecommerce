@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Quản lý loại sản phẩm</title>
 </head>
 <body>
 	<main>
@@ -31,7 +31,7 @@
 		<div class="container-xl px-4 mt-n10">
 			<div class="card mb-4">
 				<div class="card-header d-flex justify-content-between bg-light">
-					<div class="text-black">Extended DataTables</div>
+					<div class="text-black">kế thừa từ DataTables.net</div>
 					<div>
 						<c:if test="${not empty msg}">
 							<p class="p-3 mb-2 bg-success text-white font-weight-bold">${msg}</p>

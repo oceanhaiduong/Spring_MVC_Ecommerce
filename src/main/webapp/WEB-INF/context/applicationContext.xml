@@ -76,6 +76,12 @@
 	
 	<!--Paginate service -->
 	<bean id="PaginatesService" class="com.webBH.service.PaginatesServiceImpl" />
+	
+	<!--Category dao -->
+	<bean id="BillsDaoImpl" class="com.webBH.DAO.BillsDaoImpl" />
+
+	<!--Cart service -->
+	<bean id="BillsService" class="com.webBH.service.BillsServiceImpl" />
 
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
