@@ -125,11 +125,11 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.4.1.Final</version>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>net.codejava.spring</groupId>
 			<artifactId>SpringSecurityBasicXML</artifactId>
 			<version>1.0</version>
-		</dependency>
+		</dependency>-->
 	</dependencies>
 	<build>
 		<!-- To use the plugin goals in your POM or parent POM -->

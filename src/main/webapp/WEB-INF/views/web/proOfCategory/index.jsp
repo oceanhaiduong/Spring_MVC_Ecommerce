@@ -126,6 +126,8 @@
 									<form
 										action="<%=request.getContextPath()%>/trang-chu/cart/${item.id}"
 										method="get">
+										<input hidden="hidden" type="number" min="1" name="quantity"
+										value="1" class="form-control bg-secondary text-center">
 										<button class="btn btn-sm text-dark p-0">
 											<i class="fas fa-shopping-cart text-primary mr-1"></i>Thêm
 											vào giỏ hàng
